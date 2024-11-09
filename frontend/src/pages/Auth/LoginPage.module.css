@@ -1,0 +1,23 @@
+.wrapper {
+      min-height: 900px;
+      background-size: cover;
+      background-image: url(https://cdn.pixabay.com/photo/2016/01/09/18/27/camera-1130731_1280.jpg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .form {
+      border-right: 1px solid var(--mantine-color-gray-3);
+      min-height: 900px;
+      max-width: 450px;
+      padding-top: 80px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    
+    .title {
+      color: var(--mantine-color-black);
+      font-family: 'Greycliff CF', var(--mantine-font-family);
+    }
+    
