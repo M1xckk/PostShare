@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { TextInput, Button, Paper, Title, Text, Container, Group } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import useBoundStore from "../../store/Store";
 
@@ -7,51 +8,37 @@ const LoginPage = () => {
   const { loginService, authLoading, user } = useBoundStore((state) => state);
 
   useEffect(() => {
-    if (!!user) {
+    if (user) {
       navigate("/posts");
     }
   }, [user]);
 
-  const onLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    let email = e.target.email?.value;
-    let password = e.target.password?.value;
-    if (!email || !password) return;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     loginService(email, password);
   };
+
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <form onSubmit={onLogin}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gridGap: "20px",
-            background: "#d3d3d3",
-            padding: "50px",
-          }}
-        >
-          <h1>This is the login page</h1>
-          <input
-            placeholder="email"
-            name="email"
-            type="email"
-            required
-            style={{ minWidth: "320px", height: "26px" }}
-          />
-          <input
-            placeholder="password"
-            name="password"
-            type="password"
-            required
-            style={{ minWidth: "320px", height: "26px" }}
-          />
-          <button type="submit">login</button>
-          {authLoading ? <h2>Loading...</h2> : null}
-        </div>
-      </form>
-    </div>
+    <Container size={420} my={40}>
+      <Title align="center">Welcome to PhotoShare</Title>
+      <Text color="dimmed" size="sm" align="center" mt={5}>
+        Please login to continue
+      </Text>
+
+      <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+        <form onSubmit={handleSubmit}>
+          <TextInput label="Email" placeholder="you@example.com" name="email" required />
+          <TextInput label="Password" placeholder="Your password" name="password" type="password" required mt="md" />
+          <Group position="apart" mt="md">
+            <Button type="submit" fullWidth loading={authLoading}>
+              Login
+            </Button>
+          </Group>
+        </form>
+      </Paper>
+    </Container>
   );
 };
 

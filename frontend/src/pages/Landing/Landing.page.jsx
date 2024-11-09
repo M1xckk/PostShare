@@ -2,7 +2,7 @@ import { Container } from "@mantine/core";
 
 const Landing = () => {
   return (
-    <Container>
+    <Container style={{ paddingBottom: "5rem" }}> 
       <h1>Welcome to PhotosShare</h1>
       <p>
         PhotosShare is a platform where photographers can upload, edit, and
@@ -15,7 +15,7 @@ const Landing = () => {
       <div style={{
         display: "flex",
         flexWrap: "wrap",
-        gap: "20px", // Space between images
+        gap: "20px",
         justifyContent: "center",
       }}>
         <img
