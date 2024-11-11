@@ -1,9 +1,8 @@
 .footer {
   width: 100%;
-  padding: 0rem;
-  background-color: #f8f9fa; 
-  position:fixed;
-  bottom:0;
+  padding: 16px;
+  background-color: #f8f9fa;
+  position: relative; 
 }
 
 .inner {
@@ -11,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  flex-wrap: wrap; 
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -18,8 +18,11 @@
 }
 
 .links {
+  display: flex;
+  gap: 12px;
   @media (max-width: 768px) {
     margin-top: 24px;
     margin-bottom: 8px;
+    justify-content: center;
   }
 }

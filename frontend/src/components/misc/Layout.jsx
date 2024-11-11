@@ -1,12 +1,12 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import FooterCentered  from "./FooterCentered";
+import FooterCentered from "./FooterCentered";
 
 const Layout = () => {
   return (
-    <div>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar />
-      <main>
+      <main style={{ flex: 1, paddingBottom: "2rem" }}>
         <Outlet />
       </main>
       <FooterCentered />
