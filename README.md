@@ -1,44 +1,46 @@
-# PhotoShare Full-Stack Application
+# 📸 PhotoShare Full-Stack Application
 
-## Overview
-PhotoShare is a full-stack web application that allows photographers to upload, share, and edit posts with descriptions and images. The project is built with a React frontend and a Node.js/Express backend.
+## 📝 Overview
+**PhotoShare** is a full-stack web application that allows photographers to upload, share, and edit posts with descriptions and images. The project is built with a React frontend and a Node.js/Express backend.
 
-## Flow Diagram
+## 📊 Flow Diagram
 Below is the flow diagram for the application:
 
 ![Flow Diagram](./frontend/src/assets/flow-diagram.png)
 
-## Technologies Used
+---
+
+## 🛠️ Technologies Used
 - **Frontend**: React, Vite, Mantine UI, Zustand for state management
 - **Backend**: Node.js, Express, Axios
 - **Authentication**: JSON Web Token (JWT)
 - **Database**: Fake in-memory database for simplicity
 
-## Getting Started
+---
 
-### Prerequisites
-Make sure you have the following installed:
-- Node.js
-- npm or yarn
+## 🚀 Getting Started
 
-### Setup Instructions
+### ⚙️ Frontend
+- cd frontend
+- npm install
+- npm run dev
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd project-root
+### ⚙️ Backend
+- cd backend
+- npm start
 
-### Frontend Setup
-cd frontend
-npm install
-npm run dev
+---
 
-### Backend Setup
-cd backend
-npm install
-npm run dev
+## 🔐 API Endpoints
+### 🛡️ Authentication
+- POST /api/user/login: Logs in a user and returns a token.
+- POST /api/user/validation: Validates a user token.
 
-### Usage
--Frontend: Visit http://localhost:5173
--Backend: Runs on http://localhost:8085
+---
+
+### 📋 Posts
+- GET /api/posts: Retrieves all posts.
+- GET /api/posts/:id: Retrieves details of a specific post.
+- POST /api/posts: Creates a new post.
+- PUT /api/posts/:id: Updates an existing post.
 
